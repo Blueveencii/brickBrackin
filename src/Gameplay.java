@@ -7,7 +7,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
-
 public class Gameplay extends JPanel implements KeyListener, ActionListener {
     private boolean play = false;
     private int score = 0;
@@ -72,8 +71,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
         }
 
 
-
-        }
+    }
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -82,32 +80,46 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode()==KeyEvent.VK_RIGHT  ){
-            if(playerX >=600){
-                playerX =600;
-            }else{
-                moveRight() ;
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            if (playerX >= 600) {
+                playerX = 600;
+            } else {
+                moveRight();
             }
         }
-        if(e.getKeyCode() ==KeyEvent.VK_LEFT ){
-            if(playerX <10){
-                moveLeft() ;
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            if (playerX < 10) {
+                moveLeft();
             }
         }
 
     }
 
     @Override
-        public void keyReleased (KeyEvent e){
+    public void keyReleased(KeyEvent e) {
 
-        }
-
-    public void moveRight (){
-        play = true;
-        playerX +=20;
     }
-    public void moveLeft (){
+
+    public void moveRight() {
         play = true;
-        playerX -=20;
+        playerX += 20;
+    }
+
+    public void moveLeft() {
+        play = true;
+        playerX -= 20;
+    }
+
+
+    public static void main(String[] args) {
+        JFrame obj = new JFrame();
+        Gameplay gamePlay = new Gameplay();
+        obj.setBounds(10, 10, 600, 700);
+        obj.setTitle("Breakout ball");
+        obj.setResizable(false);
+        obj.setVisible(true);
+        obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        obj.add(gamePlay);
+
     }
 }

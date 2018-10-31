@@ -1,4 +1,4 @@
-import javax.swing.JFrame ;
+import javax.swing.JFrame;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -10,14 +10,13 @@ public class Main {
 
         JFrame obj = new JFrame();
         Gameplay gamePlay = new Gameplay();
-        obj.setBounds(10,10,600,700);
+        obj.setBounds(10, 10, 600, 700);
         obj.setTitle("Breakout ball");
         obj.setResizable(false);
         obj.setVisible(true);
-        obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE );
+        obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         obj.add(gamePlay);
 
-        }
-
     }
+}
 
